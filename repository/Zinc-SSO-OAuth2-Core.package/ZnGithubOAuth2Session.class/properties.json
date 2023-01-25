@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "ZnOAuth2Session",
+	"category" : "Zinc-SSO-OAuth2-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"accessType",
+		"prompt"
+	],
+	"name" : "ZnGithubOAuth2Session",
+	"type" : "normal"
+}

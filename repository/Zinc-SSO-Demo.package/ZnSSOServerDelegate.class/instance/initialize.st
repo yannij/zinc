@@ -6,6 +6,9 @@ initialize
 	self prefixMap
 		at: 'sso-demo' put: #ssoDemo: ;
 		at: 'sso-reset' put: #ssoReset: ;
+		at: 'sso-github' put: #ssoGithub: ;
+		at: 'sso-github-callback' put: #ssoGithubCallback: ;
+		at: 'sso-github-data' put: #ssoGithubData: ;
 		at: 'sso-google' put: #ssoGoogle: ;
 		at: 'sso-google-callback' put: #ssoGoogleCallback: ;
 		at: 'sso-google-data' put: #ssoGoogleData: ;

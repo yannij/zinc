@@ -5,7 +5,7 @@ ssoDemo: request
 		htmlPageTitled: 'Zinc SSO Demo'
 		do: [ :stream | 
 			stream << '<h2>OAuth2 Providers</h2>'.
-			#(#Google #Facebook )
+			#(#Google #Facebook #Github)
 				do: [ :each |
 					session := self perform: (each asLowercase, 'SessionFor:') asSymbol with: request.
 					stream
@@ -17,18 +17,18 @@ ssoDemo: request
 						<< each;
 						<< '</a>' ]
 				separatedBy: [ stream << ' | ' ].
-			stream << '<h2>OAuth1 Providers</h2>'.
+			"stream << '<h2>OAuth1 Providers</h2>'.
 			service := self twitterOAuth1Service.
 			token := service getRequestTokenFor: request server url / 'sso-twitter-callback'.
 			self twitterSessionFor: request put: token.
 			stream
-				<< '<a href="';
+				<< '<a href=""';
 				<< (service loginUrlFor: token) asString;
-				<< '" title="Login with ';
+				<< '"" title=""Login with ';
 				<< #Twitter;
-				<< '">';
+				<< '"">';
 				<< #Twitter;
-				<< '</a>'.
+				<< '</a>'."
 			stream << '<h2>OpenID Providers</h2>'.
 			#( Google Yahoo ) 
 				do: [ :each |
