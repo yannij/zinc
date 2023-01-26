@@ -9,6 +9,7 @@ handleAuthenticationCallback: aParameterDictionary
 
 	tokenRequest  := (ZnRequest post: (ZnUrl fromString: self tokenEndpoint))
 		entity: (ZnApplicationFormUrlEncodedEntity new
+			at: 'scope' put: 'user:email';
 			at: 'code' put: code;
 			at: 'redirect_uri' put: self redirectUrl;
 			at: 'client_id' put: self consumerData key;
